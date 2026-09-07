@@ -112,7 +112,7 @@ class ResumeAnalyzerEngine:
         ats_checks = {
             "has_contact_info": bool(resume_data.get("has_contact_info", True)),
             "standard_sections": len(resume_data.get("section_headings", [])) >= 3,
-            "readable_length": 100 < len(raw_cv_text) < 15000,
+            "readable_length": 100 < len(raw_cv_text) < 15000
         }
         ats_score = (sum(ats_checks.values()) / len(ats_checks)) * 100
 
@@ -135,5 +135,4 @@ class ResumeAnalyzerEngine:
             "detected_experience": cv_exp,
             "required_experience": jd_exp,
             "ats_checks": ats_checks
-        }
         }
